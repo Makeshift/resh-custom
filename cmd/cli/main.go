@@ -144,13 +144,13 @@ func runReshCli() (string, int) {
 		log.Panicln(err)
 	}
 
-	if err := g.SetKeybinding("", gocui.KeyArrowRight, gocui.ModNone, layout.SelectPaste); err != nil {
+	if err := g.SetKeybinding("", gocui.KeyArrowRight, gocui.ModNone, layout.SelectExecute); err != nil {
 		log.Panicln(err)
 	}
-	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, layout.SelectExecute); err != nil {
+	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, layout.SelectPaste); err != nil {
 		log.Panicln(err)
 	}
-	if err := g.SetKeybinding("", gocui.KeyCtrlG, gocui.ModNone, layout.AbortPaste); err != nil {
+	if err := g.SetKeybinding("", gocui.KeyEsc, gocui.ModNone, layout.AbortPaste); err != nil {
 		log.Panicln(err)
 	}
 	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, quit); err != nil {
